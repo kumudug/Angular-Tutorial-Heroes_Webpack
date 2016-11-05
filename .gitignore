@@ -250,3 +250,12 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+
+#typings
+typings/
+
+#my ignored files
+npm-debug.log.*
+/app/*.js
+/app/*.map

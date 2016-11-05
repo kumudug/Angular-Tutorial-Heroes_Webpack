@@ -1,0 +1,10 @@
+//json doesn't support comments. So this is converted using jsmin - http://www.crockford.com/javascript/jsmin.html
+//jsmin <typings_commented.json >typings.json
+//identifies TypeScript definition files. See TypeScript Configuration for details.
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "node": "registry:dt/node#6.0.0+20160909174046"
+  }
+}
