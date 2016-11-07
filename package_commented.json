@@ -18,12 +18,14 @@
 {
   "name": "angular2-tutorial-heroes",
   "version": "1.0.0",
+  "description": "angular-tutorial-heroes from systemjs to webpack",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "lite": "lite-server",
-    //"postinstall": "typings install", //We installed the typings tool with npm (it's listed among the devDependencies in the package.json) and added an npm script to run that tool automatically after npm installation completes. We can run it manually by running 'npm run typings install'
-    "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    //"start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "webpack-dev-server --inline --progress --port 8080"
+    //"lite": "lite-server",
+    //"postinstall": "typings install" //We installed the typings tool with npm (it's listed among the devDependencies in the package.json) and added an npm script to run that tool automatically after npm installation completes. We can run it manually by running 'npm run typings install'
+    //"tsc": "tsc",
+    //"tsc:w": "tsc -w",
     //"typings": "typings"
   },
   "license": "ISC",
@@ -40,19 +42,20 @@
     "@angular/upgrade": "~2.1.1", //Set of utilities for upgrading Angular 1 applications.
 
     "angular-in-memory-web-api": "~0.1.13", //An Angular-supported library that simulates a remote server's web api without requiring an actual server or real http calls. Good for demos, documentation samples, and early stage development (before we even have a server). Learn about it in the Http Client chapter.
-    "bootstrap": "^3.3.7",
+    //"bootstrap": "^3.3.7",
     "core-js": "^2.4.1", //Patches the global context (window) with essential features of ES2015 (ES6). You may substitute an alternative polyfill that provides the same core APIs. When these APIs are implemented by the major browsers, this dependency will become unnecessary.
     "reflect-metadata": "^0.1.8", //A dependency shared between Angular and the TypeScript compiler. You can update a TypeScript package without upgrading Angular, which is why this is a dependency of the application and not a dependency of Angular.
     "rxjs": "5.0.0-beta.12", //A polyfill for the Observables specification currently before the TC39 committee that determines standards for the JavaScript language. Developers should be able to pick a preferred version of rxjs (within a compatible version range) without waiting for Angular updates.
-    "systemjs": "0.19.39", //A dynamic module loader compatible with the ES2015 module specification. There are other viable choices including the well-regarded webpack. SystemJS happens to be the one we use in the documentation samples. It works.    
+    //"systemjs": "0.19.39", //A dynamic module loader compatible with the ES2015 module specification. There are other viable choices including the well-regarded webpack. SystemJS happens to be the one we use in the documentation samples. It works.    
     "zone.js": "^0.6.25" //A polyfill for the Zone specification currently before the TC39 committee that determines standards for the JavaScript language. Developers should be able to pick a preferred version of zone.js to use (within a compatible version range) without waiting for Angular updates.
+    //"jquery": "^3.1.1"
   },
 "devDependencies": {
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.45",
-    "concurrently": "^3.0.0", //A utility to run multiple npm commands concurrently on OS/X, Windows, and Linux operating systems.
-    "lite-server": "^2.2.2", //A light-weight, static file server, by John Papa with excellent support for Angular apps that use routing.
-    "typescript": "^2.0.3" //The TypeScript language server, including the tsc TypeScript compiler.
+    //"concurrently": "^3.0.0", //A utility to run multiple npm commands concurrently on OS/X, Windows, and Linux operating systems.
+    //"lite-server": "^2.2.2", //A light-weight, static file server, by John Papa with excellent support for Angular apps that use routing.
+    "typescript": "^2.0.3", //The TypeScript language server, including the tsc TypeScript compiler.
     //"typings":"^1.0.4"
     
     /*
@@ -61,5 +64,30 @@
     We need do nothing to get typings files for library packages which include d.ts files
     Sadly, many libraries — jQuery, Jasmine, and Lodash among them — do not include d.ts files in their npm packages. Fortunately, either their authors or community contributors have created separate d.ts files for these libraries and published them in well-known locations. The typings tool can find and fetch these files for us.
     */
+
+    //New dev dependancies for webpack
+    "angular2-template-loader": "^0.4.0",
+    "awesome-typescript-loader": "^2.2.4",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    //"jasmine-core": "^2.4.1",
+    //"karma": "^1.2.0",
+    //"karma-jasmine": "^1.0.2",
+    //"karma-phantomjs-launcher": "^1.0.2",
+    //"karma-sourcemap-loader": "^0.3.7",
+    //"karma-webpack": "^1.8.0",
+    "null-loader": "^0.1.1",
+    //"phantomjs-prebuilt": "^2.1.7",
+    "raw-loader": "^0.5.1",
+    //"rimraf": "^2.5.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+
+    "rimraf": "^2.5.2"
   }
 }
